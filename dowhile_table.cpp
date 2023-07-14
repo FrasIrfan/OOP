@@ -4,7 +4,7 @@ using namespace std;
 class A // NEW CLASS
 {
 private:
-    int n; //DATA MEMBER
+    int n; // DATA MEMBER
 
 public:
     void looptable() // MEMBER FUNCTION
@@ -12,18 +12,29 @@ public:
         cout << "Enter a number: ";
         cin >> n;
 
-        int i = 1;
-        do
+        class A
         {
-            cout << n << "*" << i << "=" << n * i << "\n";
-            i++;
-        } while (i <= 10);
-    }
-};
+        private:
+            int n;
 
-int main()
-{
-    A obj1;
-    obj1.looptable();
-    return 0;
-}
+        public:
+            void looptable()
+            {
+                cout << "Enter a number: ";
+                cin >> n;
+
+                int i = 1;
+                do
+                {
+                    cout << n << "*" << i << "=" << n * i << "\n";
+                    i++;
+                } while (i <= 10);
+            }
+        };
+
+        int main()
+        {
+            A obj1;
+            obj1.looptable();
+            return 0;
+        }
