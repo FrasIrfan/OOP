@@ -11,7 +11,7 @@ public:
     {
         first_variable = 10;
     }
-    friend void show(A, B);
+    friend void show(A, B); //FRIEND FUNCTION
 };
 class B
 {
