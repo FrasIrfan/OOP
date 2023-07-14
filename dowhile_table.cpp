@@ -4,10 +4,10 @@ using namespace std;
 class A // NEW CLASS
 {
 private:
-    int n;
+    int n; //DATA MEMBER
 
 public:
-    void looptable()
+    void looptable() // MEMBER FUNCTION
     {
         cout << "Enter a number: ";
         cin >> n;
