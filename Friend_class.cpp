@@ -11,7 +11,7 @@ public:
         a = 10;
         b = 20;
     }
-    friend class second_class;
+    friend class second_class; //FRIEND CLASS
 };
 class second_class
 {
