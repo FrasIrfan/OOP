@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class A
+class A // NEW CLASS
 {
 private:
     int n;
@@ -11,7 +11,7 @@ public:
     {
         cout << "Enter a number: ";
         cin >> n;
-        
+
         int i = 1;
         do
         {
