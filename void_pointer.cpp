@@ -6,7 +6,7 @@ int main()
     int n = 10;
     float f = 25.18;
     char c = '$';
-    void *ptr;
+    void *ptr; //a type of pointer that can store the address of any type of variable
     ptr = &n;
     cout << "The value of n: " << n << endl;
     cout << "The address of n: " << ptr << endl;
