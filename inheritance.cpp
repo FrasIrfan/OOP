@@ -21,7 +21,7 @@ public:
     }
 };
 
-class Move2 : public Move
+class Move2 : public Move // child class inherited by parent class
 {
 public:
     void backward()
