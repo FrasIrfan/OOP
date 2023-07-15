@@ -14,9 +14,9 @@ public:
     {
         cout << "The value of n = " << n << endl;
     }
-    void operator++() // Overloading ++ operator
+    void operator++() //Overloading ++ operator
     {
-        n = n * 2; // give whatever functionality you can to the operator
+        n = n * 2; //give whatever functionality you can to the operator (in my case i gave the functionality of multiplication to the addition operator)
     }
 };
 
