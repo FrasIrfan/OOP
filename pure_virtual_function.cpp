@@ -3,7 +3,7 @@ using namespace std;
 class Parent // ABSTRACT CLASS 
 {
 public:
-    virtual void show() = 0; // declaring a virtual void function 
+    virtual void show() = 0; // declaring a pure virtual void function 
 };
 class Child1 : public Parent
 {
