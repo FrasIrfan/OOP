@@ -22,7 +22,7 @@ public:
         cout << "The value of a = " << a << endl;
         cout << "The value of b = " << b << endl;
     }
-    Add operator+(Add p)
+    Add operator+(Add p) // overloading operator by passing parameter 
     {
         Add temp;
         temp.a = a - p.a;
