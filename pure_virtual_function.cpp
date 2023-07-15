@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
-class Parent // ABSTRACT CLASS
+class Parent // ABSTRACT CLASS 
 {
 public:
-    virtual void show() = 0;
+    virtual void show() = 0; // declaring a virtual void function 
 };
 class Child1 : public Parent
 {
