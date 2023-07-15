@@ -3,7 +3,7 @@ using namespace std;
 class A
 {
 public:
-    virtual void show()
+    virtual void show() //declaration of virtual function
     {
         cout << "Parent Class A" << endl;
     }
