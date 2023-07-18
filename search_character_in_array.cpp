@@ -4,17 +4,19 @@ using namespace std;
 int main()
 {
     char str[] = "Hello Programming";
-    char ch, *ptr, s;
-    s = 'n';
+    char searchCharacter, *ptr, flag;
+    flag = 'n';
     ptr = str;
     cout << "Enter any character to find: ";
-    cin >> ch;
+    cin >> searchCharacter;
     while (*ptr++ != '\0')
-        if (*ptr == ch)
+    {
+        if (*ptr == searchCharacter)
         {
-            s = 'y';
+            flag = 'y';
         }
-    if (s == 'y')
+    }
+    if (flag == 'y')
     {
         cout << "Character found" << endl;
     }
