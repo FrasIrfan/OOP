@@ -11,13 +11,11 @@ int main()
         cout << "Enter floating value " << i << ":";
         cin >> arr[i];
     }
-    // cout << "ptr = " << ptr << endl;
-    ptr = &arr[4];
-    // cout << "ptr = " << ptr << endl;
+    ptr = &arr[4]; //assigns the address of the last element of the arr array to the pointer variable ptr
     cout << "The values in reverse order: \n";
     for (int i = 0; i < 5; i++)
     {
-        cout << *ptr-- << "\t";
+        cout << *ptr-- << "\t"; //The asterisk (*) before ptr is the dereference operator. It retrieves the value stored at the memory location
     }
     return 0;
 }
