@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 struct Book
 {
     char author[30];
