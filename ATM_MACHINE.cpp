@@ -70,11 +70,17 @@ public:
         if (amount > 50000)
         {
             cout << "Insufficient balance" << endl;
+            Withdraw();
+        }
+        else if (amount < 0)
+        {
+            cout << "Please Enter Valid Amount" << endl;
+            Withdraw();
         }
         else
         {
             balance -= amount;
-            cout << "Your balance is: " << balance << endl;
+            cout << "Your Amount is Withdrawn Successfully\nNew balance is: " << balance << endl;
         }
     }
 
