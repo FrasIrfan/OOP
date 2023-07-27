@@ -39,6 +39,9 @@ public:
                 withdraw();
                 break;
             case 3:
+                changePin();
+                break;
+            case 4:
                 exitAtm();
                 break;
             default:
@@ -57,7 +60,8 @@ public:
         cout << "\nChoose an option" << endl;
         cout << "1. Check Balance" << endl;
         cout << "2. Withdraw Cash" << endl;
-        cout << "3. Exit" << endl;
+        cout << "3. Change PIN" << endl;
+        cout << "4. Exit" << endl;
     }
 
     void checkBalance()
@@ -86,7 +90,25 @@ public:
             cout << "Your Amount is Withdrawn Successfully\nNew balance is: " << balance << endl;
         }
     }
+    void changePin()
+    {
+        int previousPin, newPin;
+        cout << "Enter Previous PIN: ";
+        cin >> previousPin;
 
+        if (previousPin == pin)
+        {
+            cout << "Enter new PIN: ";
+            cin >> newPin;
+            pin = newPin;
+            cout << "PIN changed successfully" << endl;
+        }
+        else if (previousPin != pin)
+        {
+            cout << "PIN is incorrect\nTry Again" << endl;
+            changePin();
+        }
+    }
     void exitAtm()
     {
         cout << "Thank you for using our ATM" << endl;
