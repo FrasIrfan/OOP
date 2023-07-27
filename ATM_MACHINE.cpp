@@ -1,28 +1,30 @@
 #include <iostream>
 using namespace std;
+
 class AtmMachine
 {
 private:
     int balance;
     int pin;
-    int account_number;
+    int accountNumber;
 
 public:
     AtmMachine()
     {
         balance = 50000;
         pin = 1234;
-        account_number = 123456789;
+        accountNumber = 123456789;
     }
+
     void run()
     {
         int inputPin;
-        cout << "Enter your pin: ";
+        cout << "Enter your PIN: ";
         cin >> inputPin;
 
         if (pin == inputPin)
         {
-            cout << "Pin is correct" << endl;
+            cout << "PIN is correct" << endl;
             cout << "Account Balance: " << balance;
             displayMenu();
             int option;
@@ -34,20 +36,19 @@ public:
                 checkBalance();
                 break;
             case 2:
-                Withdraw();
+                withdraw();
                 break;
             case 3:
                 exitAtm();
                 break;
             default:
-                cout << "Invalid option Try Again After Re Entering Your ATM Card" << endl;
+                cout << "Invalid option. Try Again After Re-Entering Your ATM Card" << endl;
                 break;
             }
         }
-
         else
         {
-            cout << "Pin is incorrect" << endl;
+            cout << "PIN is incorrect" << endl;
         }
     }
 
@@ -58,24 +59,26 @@ public:
         cout << "2. Withdraw Cash" << endl;
         cout << "3. Exit" << endl;
     }
+
     void checkBalance()
     {
         cout << "Your balance is: " << balance << endl;
     }
-    void Withdraw()
+
+    void withdraw()
     {
         int amount;
         cout << "Enter amount to withdraw: ";
         cin >> amount;
-        if (amount > 50000)
+        if (amount > balance)
         {
             cout << "Insufficient balance" << endl;
-            Withdraw();
+            withdraw();
         }
         else if (amount < 0)
         {
             cout << "Please Enter Valid Amount" << endl;
-            Withdraw();
+            withdraw();
         }
         else
         {
@@ -94,6 +97,5 @@ int main()
 {
     AtmMachine atm;
     atm.run();
-
     return 0;
 }
