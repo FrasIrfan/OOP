@@ -18,6 +18,7 @@ public:
 
     void run()
     {
+        cout << "Welcome to ATM" << endl;
         int inputPin;
         cout << "Enter your PIN: ";
         cin >> inputPin;
@@ -45,7 +46,8 @@ public:
                 exitAtm();
                 break;
             default:
-                cout << "Invalid option. Try Again After Re-Entering Your ATM Card" << endl;
+                cout << "Invalid option. Try Again" << endl;
+                run();
                 break;
             }
         }
