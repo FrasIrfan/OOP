@@ -37,12 +37,15 @@ public:
                 checkBalance();
                 break;
             case 2:
-                withdraw();
+                deposit();
                 break;
             case 3:
-                changePin();
+                withdraw();
                 break;
             case 4:
+                changePin();
+                break;
+            case 5:
                 exitAtm();
                 break;
             default:
@@ -61,14 +64,32 @@ public:
     {
         cout << "\nChoose an option" << endl;
         cout << "1. Check Balance" << endl;
-        cout << "2. Withdraw Cash" << endl;
-        cout << "3. Change PIN" << endl;
-        cout << "4. Exit" << endl;
+        cout << "2. Deposit Cash" << endl;
+        cout << "3. Withdraw Cash" << endl;
+        cout << "4. Change PIN" << endl;
+        cout << "5. Exit" << endl;
     }
 
     void checkBalance()
     {
         cout << "Your balance is: " << balance << endl;
+    }
+
+    void deposit()
+    {
+        int depositAmount;
+        cout << "Enter value to deposit: ";
+        cin >> depositAmount;
+        if (depositAmount < 0)
+        {
+            cout << "Please Enter Valid Amount" << endl;
+            deposit();
+        }
+        else
+        {
+            balance += depositAmount;
+            cout << "Your Amount is Deposited Successfully\nNew balance is: " << balance << endl;
+        }
     }
 
     void withdraw()
