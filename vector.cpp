@@ -28,6 +28,25 @@ int main()
 
     cout << "Size of the vector: " << myVector.size() << endl; // Outputs 6
 
+    // Advantages of using vectors
+
+    // 1. Vectors are dynamic arrays. They can grow and shrink in size as needed.
+    // 2. Vectors are very easy to use. They have a lot of built-in functions that make it easy to perform operations on them.
+    // 3. Vectors are very efficient. They are implemented as dynamic arrays, so they have the same performance as arrays.
+    // 4. Vectors are very similar to arrays. If you know how to use arrays, you can easily learn how to use vectors.
+
+    //    1. Dynamic Size
+    //    2. Automatic Memory Management
+    //    3. Efficient Access
+    //    4. Dynamic Resizing
+    //    5. Convenient Size Tracking
+    //    6. Versatile Data Structure
+    //    7. STL Compatibility
+    //    8. Wide Support
+    //    9. Easy Iteration
+    //    10. No Fixed Size Limit
+
+    // In conclusion, it is always better to use an array if you know exactly how many items
 
     return 0;
 }
