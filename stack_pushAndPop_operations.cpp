@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    stack<int> myStack; //a variable declaration that creates a stack container of integers named myStack
+    stack<int> myStack; // a variable declaration that creates a stack container of inegers named myStack
 
     myStack.push(10); // Pushes 10 onto the stack
     myStack.push(20); // Pushes 20 onto the stack
