@@ -26,11 +26,19 @@ public:
         if (pin == inputPin)
         {
             cout << "PIN is correct" << endl;
-            cout << "Account Balance: " << balance;
+            cout << "Account Balance: " << balance << endl;
             displayMenu();
+
             int option;
-            cout << "Enter option:";
+            cout << "Enter option: ";
             cin >> option;
+
+            while (option < 1 || option > 5)
+            {
+                cout << "Invalid option. Try Again: ";
+                cin >> option;
+            }
+
             switch (option)
             {
             case 1:
@@ -47,10 +55,6 @@ public:
                 break;
             case 5:
                 exitAtm();
-                break;
-            default:
-                cout << "Invalid option. Try Again" << endl;
-                run();
                 break;
             }
         }
@@ -80,16 +84,16 @@ public:
         int depositAmount;
         cout << "Enter value to deposit: ";
         cin >> depositAmount;
-        if (depositAmount < 0)
+
+        while (depositAmount < 0) // The while loop continues until the user enters a non-negative value (a valid amount). Once a valid amount is provided, the while loop is exited, and the function continues to the next steps.
+
         {
-            cout << "Please Enter Valid Amount" << endl;
-            deposit();
+            cout << "Please Enter Valid Amount: ";
+            cin >> depositAmount;
         }
-        else
-        {
-            balance += depositAmount;
-            cout << "Your Amount is Deposited Successfully\nNew balance is: " << balance << endl;
-        }
+
+        balance += depositAmount;
+        cout << "Your Amount is Deposited Successfully\nNew balance is: " << balance << endl;
     }
 
     void withdraw()
@@ -97,41 +101,42 @@ public:
         int amount;
         cout << "Enter amount to withdraw: ";
         cin >> amount;
-        if (amount > balance)
+
+        while (amount > balance || amount < 0) //while loop will keep executing as long as either of the following conditions is true:
         {
-            cout << "Insufficient balance" << endl;
-            withdraw();
+            if (amount > balance)
+            {
+                cout << "Insufficient balance. Try Again: ";
+            }
+            else
+            {
+                cout << "Please Enter Valid Amount: ";
+            }
+            cin >> amount;
         }
-        else if (amount < 0)
-        {
-            cout << "Please Enter Valid Amount" << endl;
-            withdraw();
-        }
-        else
-        {
-            balance -= amount;
-            cout << "Your Amount is Withdrawn Successfully\nNew balance is: " << balance << endl;
-        }
+
+        balance -= amount;
+        cout << "Your Amount is Withdrawn Successfully\nNew balance is: " << balance << endl;
     }
+
     void changePin()
     {
         int previousPin, newPin;
         cout << "Enter Previous PIN: ";
         cin >> previousPin;
 
-        if (previousPin == pin)
+        while (previousPin != pin)
         {
-            cout << "Enter new PIN: ";
-            cin >> newPin;
-            pin = newPin;
-            cout << "PIN changed successfully" << endl;
+            cout << "PIN is incorrect. Try Again: ";
+            cin >> previousPin;
         }
-        else if (previousPin != pin)
-        {
-            cout << "PIN is incorrect\nTry Again" << endl;
-            changePin();
-        }
+
+        cout << "Enter new PIN: ";
+        cin >> newPin;
+        pin = newPin;
+        cout << "PIN changed successfully" << endl;
     }
+
     void exitAtm()
     {
         cout << "Thank you for using our ATM" << endl;
